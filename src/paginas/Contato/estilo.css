@@ -1,0 +1,27 @@
+.contato-container {
+    padding-top: 90px;
+}
+
+.lista-alunos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.lista-alunos li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    max-width: 300px;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista-alunos li img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
