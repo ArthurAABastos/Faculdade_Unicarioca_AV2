@@ -20,20 +20,13 @@ const Login = () => {
       <button
         onClick={() => {
           signIn({
-            email: "antonio@domob.me",
+            email: "teste@teste.me",
             password: "123123"
           });
         }}
       >
         Login
       </button>
-
-      <div>
-        <Link to={"../profile"}>Ir para Profile</Link>
-      </div>
-      <div>
-        <Link to={"../dashboard"}>Ir para Dashboard</Link>
-      </div>
     </>
   );
 };

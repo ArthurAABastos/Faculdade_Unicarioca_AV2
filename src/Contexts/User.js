@@ -4,7 +4,8 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   signOut as signOutFirebase,
-  onAuthStateChanged
+  onAuthStateChanged,
+  createUserWithEmailAndPassword
 } from "firebase/auth";
 
 const UsuarioContext = createContext({});
@@ -50,8 +51,25 @@ const UsuarioProvider = ({ children }) => {
       });
   };
 
+  const register = async ({ email, password }) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+
+        const user = userCredential.user;
+        console.log(user);
+       // banco(password, user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("firebase auth error", errorCode, errorMessage);
+      });
+  };
+
   return (
-    <UsuarioContext.Provider value={{ user, loading, signIn, signOut }}>
+    <UsuarioContext.Provider value={{ register ,user, loading, signIn, signOut }}>
       {children}
     </UsuarioContext.Provider>
   );
