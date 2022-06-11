@@ -3,8 +3,10 @@ import Rotas from './Rotas';
 import api from "./services/api";
 import React, { useEffect, useState } from "react";
 
+
 function App() {
 
+ 
   const [user, setUser] = useState();
 
   useEffect(() => {
@@ -15,8 +17,7 @@ function App() {
         console.error("ops! ocorreu um erro" + err);
       });
   }, []);
-
-
+  
   return (
     <div className="App">
       <Rotas />
@@ -24,7 +25,6 @@ function App() {
       <div className="App">
         <p>Usuário: {user?.login}</p>
         <p>Biografia: {user?.bio}</p>
-
 
       </div>
 
